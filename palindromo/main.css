@@ -14,6 +14,53 @@ body {
     overflow: hidden;
 }
 
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+header {
+    width: 100%;
+    background: linear-gradient(120deg, #7624d3, #18e1fc);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    width: 100%;
+    background: linear-gradient(120deg, #18e1fc, #7624d3);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+@media (max-width: 600px) {
+    footer {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -63,6 +110,13 @@ button:focus {
     box-shadow: 0 0 10px rgba(24, 225, 252, 0.7);
 }
 
+
+.button-container {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os botões */
+    margin-top: 15px;
+}
+
 #result {
     margin-top: 20px;
     font-size: 20px;
@@ -78,12 +132,6 @@ button:focus {
     opacity: 1;
 }
 
-#examples {
-    margin-top: 30px;
-    font-size: 18px;
-    color: #333;
-}
-
 #clear-btn {
     margin-top: 15px;
     background-color: #f44336;
@@ -94,7 +142,8 @@ button:focus {
         padding: 20px;
     }
 
-    input, button {
+    input,
+    button {
         width: 100%;
         max-width: 100%;
     }
@@ -102,4 +151,33 @@ button:focus {
     #result {
         font-size: 18px;
     }
+}
+#history {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 350px;
+    overflow-y: auto; 
+    max-height: 300px; 
+    border-top: 2px solid #ccc;
+    padding-top: 10px;
+}
+
+#history-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#history-list li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+#history-list li.palindrome {
+    color: #4CAF50;
+}
+
+#history-list li.not-palindrome {
+    color: #f44336;
 }
