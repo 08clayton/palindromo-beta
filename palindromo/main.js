@@ -1,5 +1,5 @@
 function checkPalindromo() {
-  const input = document.getElementById('text-input').value;
+  const input = document.getElementById('text-input').value.normalize('NFD');
   const result = document.getElementById('result');
   const clearBtn = document.getElementById('clear-btn');
   const historyList = document.getElementById('history-list');
